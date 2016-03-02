@@ -1,4 +1,5 @@
 <?php
+$nim = htmlspecialchars(trim($_POST['nim']));
 $name = htmlspecialchars(trim($_POST['name']));
 $email = htmlspecialchars(trim($_POST['email']));
 $website = htmlspecialchars(trim($_POST['website']));
@@ -6,11 +7,14 @@ $city = htmlspecialchars(trim($_POST['city']));
 $lat = htmlspecialchars(trim($_POST['lat']));
 $lng = htmlspecialchars(trim($_POST['lng']));
 $token = mt_rand(100000, 999999);
+$tlp = htmlspecialchars(trim($_POST['tlp']));
+$foto = htmlspecialchars(trim($_POST['foto']));
 
 $db = new PDO('sqlite:leaflet.sqlite');
-$db->exec("INSERT INTO users (name, email, website, city, lat, lng, token) VALUES ('$name', '$email', '$website', '$city', '$lat', '$lng', '$token');");
+$db->exec("INSERT INTO users (nim, name, email, website, city, lat, lng, token, tlp, foto) VALUES ('$nim', '$name', '$email', '$website', '$city', '$lat', '$lng', '$token', '$tlp', '$foto');");
 $db = NULL;
 
+/*
 $subject = "Welcome to the Leaflet Users Map!";
 $body = '
 <html>
@@ -34,3 +38,4 @@ $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 $headers .= 'From: Leaflet Users Map <noreply@bryanmcbride.com>' . "\r\n";
 mail($email, $subject, $body, $headers, "-fnoreply@bryanmcbride.com");
 ?>
+/*

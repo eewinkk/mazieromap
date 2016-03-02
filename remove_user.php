@@ -1,9 +1,9 @@
 <?php
 $email = $_REQUEST['email'];
-$token = $_REQUEST['token'];
+$nim = $_REQUEST['nim'];
 
 $db = new PDO('sqlite:leaflet.sqlite');
-$sql = "DELETE FROM users WHERE email = '$email' AND token = '$token';";
+$sql = "DELETE FROM users WHERE email = '$email' AND nim = '$nim';";
 
 $rs = $db->query($sql);
 $count = $rs->rowCount();
