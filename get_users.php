@@ -1,6 +1,6 @@
 <?php
 $db = new PDO('sqlite:leaflet.sqlite');
-$sql = "SELECT id, name, website, city, lat, lng FROM users;";
+$sql = "SELECT id, nim, name, website, city, lat, lng, tlp, foto FROM users;";
 
 $rs = $db->query($sql);
 if (!$rs) {
