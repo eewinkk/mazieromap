@@ -102,7 +102,7 @@
               <li><a href="#" onclick="$('#aboutModal').modal('show'); return false;"><i class="icon-question-sign icon-white"></i> Tutorial</a></li>
               <li><a href="#" onclick="$('#contactModal').modal('show'); return false;"><i class="icon-envelope icon-white"></i> Sakwa </a></li>
               <li><a href="https://github.com/eewinkk/mazieromap" target="_blank"><i class="icon-download icon-white"></i> Bantu Mengembangkan</a></li>
-              <li><a href="http://maziero681.com/" target="_blank"><i class="icon-home icon-white"></i> Home</a></li>
+              <li><a href="http://maziero681.com/" target="_blank"><i class="icon-home icon-white"></i> Beranda</a></li>
             </ul>
             <form class="navbar-form pull-right">
                <span style="padding-right: 20px;"><a class='btn btn-primary btn-small' data-toggle="modal" href="#addmeModal"><i class="icon-plus-sign icon-white"></i> Tambahkan ke Peta</a></span>
@@ -165,11 +165,11 @@
     <div class="modal hide fade" id="insertSuccessModal">
       <div class="modal-header">
         <a class="close" data-dismiss="modal">×</a>
-        <h3>Success!</h3>
+        <h3>Berhasil!</h3>
       </div>
       <div class="modal-body">
-        <p>Thanks for joining the Leaflet Users Map!</p>
-        <p>You should receive an email shortly with instructions on how to edit your information.</p>
+        <p>Terimakasih!</p>
+        <p>Untuk mengedit lokasi menggunakan NIM dan Email.</p>
       </div>
     </div>
 
@@ -192,11 +192,11 @@
     <div class="modal hide fade" id="removeSuccessModal">
       <div class="modal-header">
         <a class="close" data-dismiss="modal">×</a>
-        <h3>You have been removed</h3>
+        <h3>Data terhapus</h3>
       </div>
       <div class="modal-body">
-        <p>You have been removed from the Leaflet User Map.</p>
-        <p>Thanks for your interest and feel free to add youself back at any time.</p>
+        <p>Fiture ini masih dalam pengembangan.</p>
+        <p>Sementara waktu untuk pindah lokasi silahkan lakukan langkah seperti "Tambahkan ke peta"</p>
       </div>
     </div>
 
@@ -403,7 +403,7 @@
               $('#removeSuccessModal').modal('show');
             }
             else {
-              alert("Incorrect email or nim. Please try again.");
+              alert("Email atau nim salah, silahkan coba lagi.");
             }
           }
         });
