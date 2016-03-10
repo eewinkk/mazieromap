@@ -1,39 +1,23 @@
 <?php
-$db     = new PDO('sqlite:leaflet.sqlite');
-$sql = "SELECT * FROM users;";
+include_once 'diwan/dbconfig.php';
+$sql = "SELECT id, nim, name, website, city, lat, lng, tlp, foto, timestamp FROM users;";
 
-$query = $db->query($sql);
-/*$query  = $db->query('SELECT * FROM users');*/
-$export = $db->query ($query);
-$fields = sqlite_num_fields ( $export );
-
-for ( $i = 0; $i < $fields; $i++ ){
-    $header .= sqlite_field_name( $export , $i ) . "\t";
+$rs = $DB_con->query($sql);
+if (!$rs) {
+    echo "An SQL error occured.\n";
+    exit;
 }
 
-while( $row = sqlite_fetch_row( $export ) ){
-//sqlite_fetch_row doesnt actually exist...
-    $line = '';
-    foreach( $row as $value ){                                            
-        if ( ( !isset( $value ) ) || ( $value == "" ) ){
-            $value = "\t";
-        }else{
-            $value = str_replace( '"' , '""' , $value );
-            $value = '"' . $value . '"' . "\t";
-        }
-        $line .= $value;
-    }
-    $data .= trim( $line ) . "\n";
+$rows = array();
+while($r = $rs->fetch(PDO::FETCH_ASSOC)) {
+    $rows[] = $r;
 }
-$data = str_replace( "\r" , "" , $data );
+$fp = fopen('data_bondet.csv', 'w');
 
-if ( $data == "" ){
-    $data = "\n(0) Records Found!\n";                        
+foreach ($rows as $fields) {
+    fputcsv($fp, $fields);
 }
 
-header("Content-type: application/octet-stream");
-header("Content-Disposition: attachment; filename=emails.xls");
-header("Pragma: no-cache");
-header("Expires: 0");
-print "$header\n$data";
+fclose($fp);
+header('location:data_bondet.csv');
 ?>

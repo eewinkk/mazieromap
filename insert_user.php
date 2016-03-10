@@ -10,32 +10,33 @@ $token = mt_rand(100000, 999999);
 $tlp = htmlspecialchars(trim($_POST['tlp']));
 $foto = htmlspecialchars(trim($_POST['foto']));
 
-$db = new PDO('sqlite:leaflet.sqlite');
-$db->exec("INSERT INTO users (nim, name, email, website, city, lat, lng, token, tlp, foto) VALUES ('$nim', '$name', '$email', '$website', '$city', '$lat', '$lng', '$token', '$tlp', '$foto');");
-$db = NULL;
+// buat koneksi dengan database
+include_once 'diwan/dbconfig.php';
+$DB_con->exec("INSERT INTO users (nim, name, email, website, city, lat, lng, token, tlp, foto) VALUES ('$nim', '$name', '$email', '$website', '$city', '$lat', '$lng', '$token', '$tlp', '$foto');");
+$DB_con = NULL;
 
-/*
-$subject = "Welcome to the Leaflet Users Map!";
+$subject = "Ahlan wa sahlan";
 $body = '
 <html>
 <head>
 </head>
 <body>
-	<p>Thanks for adding yourself to the map!</p>
-	Your account information:<br>
+	<p>Syukron alakh '.$name.' sudah bergabung dengan Mazieromap!</p>
+	Informasi:<br>
 	-------------------------<br>
 	Email: '.$email.'<br>
 	Token: '.$token.'<br>
+	Latitude: '.$lat.'<br>
+	Longitude: '.$lng.'<br>
 	-------------------------<br><br>
-	Should you need to edit your information, please visit the map and click on the Remove me button.<br>
-	Enter your email and unique token to remove your entry from the database.<br>
-	Feel free to add yourself back to the map at any time!
+	Token bersifat rahasia. Berguna untuk mengganti lokasi antum.<br/>
+	<stong>Untuk mengganti foto silahkan kontak admain</strong>
 </body>
 </html>
 ';
 $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-$headers .= 'From: Leaflet Users Map <noreply@bryanmcbride.com>' . "\r\n";
-mail($email, $subject, $body, $headers, "-fnoreply@bryanmcbride.com");
+$headers .= 'From: Mazieromap Team <no-reply@maziero681.com>' . "\r\n";
+mail($email, $subject, $body, $headers, "no-reply@maziero681.com");
 ?>
-/*
+

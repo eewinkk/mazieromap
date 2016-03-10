@@ -1,12 +1,14 @@
 <?php
 $email = $_REQUEST['email'];
-$nim = $_REQUEST['nim'];
+$token = $_REQUEST['token'];
 
-$db = new PDO('sqlite:leaflet.sqlite');
-$sql = "DELETE FROM users WHERE email = '$email' AND nim = '$nim';";
+// buat koneksi dengan database
+include_once 'diwan/dbconfig.php';
 
-$rs = $db->query($sql);
+$sql = "DELETE FROM users WHERE email = '$email' AND token = '$token';";
+
+$rs = $DB_con->query($sql);
 $count = $rs->rowCount();
 echo $count;
-$db = NULL;
+$DB_con = NULL;
 ?>
