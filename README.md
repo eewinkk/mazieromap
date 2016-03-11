@@ -1,6 +1,6 @@
 ### Amru
 
-Mapping the members of Maziero in the world. The website will be [Maziero] (http://maziero681.com). And this code will be hosted in members.maziero681.com. please contribute!
+Mapping the members of Maziero in the world. The website [Maziero] (http://maziero681.com). And are codes hosted in [akdo.maziero681.com] (http://akdo.maziero681.com). please contribute!
 
 ### Dependencies
 
