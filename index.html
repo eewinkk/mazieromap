@@ -2,10 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Maziero Members Map</title>
+    <title>Mazieromap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Map showing users of the Leaflet mapping library" />
+    <meta name="description" content="Mazieromap, Maziero Razienera" />
     <meta name="keywords" content="leaflet, users, map, javascript, cloudmade" />
+    <meta name="author" content="akdo.mazieromap681.com" />
     <meta name="author" content="Bryan R. McBride, GISP - http://bryanmcbride.com" />
 
     <!-- Le styles -->
@@ -87,8 +88,7 @@
   </head>
 
   <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top ">
       <div class="navbar-inner">
         <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -99,14 +99,14 @@
           <a class="brand" href="#" onclick="return false;">Maziero Map</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li><a href="#" onclick="$('#aboutModal').modal('show'); return false;"><i class="icon-question-sign icon-white"></i> Tutorial</a></li>
+			        <li><a href="http://maziero681.com/" target="_blank"><i class="icon-home icon-white"></i>Beranda</a></li>
+              <li><a href="#" onclick="$('#aboutModal').modal('show'); return false;"><i class="icon-question-sign icon-white"></i> Iqro Awalan</a></li>
               <li><a href="#" onclick="$('#contactModal').modal('show'); return false;"><i class="icon-envelope icon-white"></i> Sakwa </a></li>
-              <li><a href="https://github.com/eewinkk/mazieromap" target="_blank"><i class="icon-download icon-white"></i> Bantu Mengembangkan</a></li>
-              <li><a href="http://maziero681.com/" target="_blank"><i class="icon-home icon-white"></i> Home</a></li>
+              <li><a href="exportdb.php" target="_blank"><i class="icon-download-alt icon-white"></i>Download Db</a></li>
             </ul>
             <form class="navbar-form pull-right">
                <span style="padding-right: 20px;"><a class='btn btn-primary btn-small' data-toggle="modal" href="#addmeModal"><i class="icon-plus-sign icon-white"></i> Tambahkan ke Peta</a></span>
-               <span><a class='btn btn-danger btn-small' data-toggle="modal" href="#removemeModal"><i class="icon-minus-sign icon-white"></i> Edit Lokasi</a></span>
+               <span><a class='btn btn-danger btn-small' data-toggle="modal" href="#removemeModal"><i class="icon-minus-sign icon-white"></i>Edit Lokasi</a></span>
             </form>
           </div>
         </div>
@@ -121,15 +121,15 @@
       <div class="modal-body">
         <h4>Tambahkan ke peta</h4>
           <p>
-          Silhakan klik icon "My location" di pojok kanan, lalu klik "Tambahkan ke map"!. Dan isi data diri.
+          Silhakan klik icon "My location" <i class="icon-screenshot icon-black"></i> di pojok kanan untuk mendeteksi lokasi antum, lalu klik "Tambahkan ke map"!. Dan isi data diri.
           </p>
         <h4>Edit lokasi</h4>
           <p>
-          Silahkan masukan NIM dan alamat EMAIL (ketika pendaftaran) lalu klik submit. Selanjutnya pilih lokasi baru.
+          Menggunakan Token (utlub ila admin) dan alamat EMAIL (ketika pendaftaran) lalu klik submit. Selanjutnya pilih lokasi baru.
           </p>
         <h4>Tambah foto</h4>
         <p>
-          Untuh menambahkan foto silahkan kontak admin (sakwa), kirimkan foto atau url foto antum. Afwan untuk fiture ini harus melalui admin agar foto sesuai dengan data diri. :)
+          Untuh menambahkan foto silahkan kontak admin (sakwa ila erwin, najem, azlan), kirimkan foto atau url foto antum. Afwan untuk fiture ini harus melalui admin agar foto sesuai dengan data diri. :)
         </p>
       </div>
     </div>
@@ -143,8 +143,6 @@
         <p><a href="http://eewinkk.blogspot.com"><strong>Erwin:</strong></a> +62 85640421735</p>
         <p><a href="http://matanaja.blogspot.com"><strong>Najamuddin:</strong></a> +62 85640421735</p>
         <p><a href=#><strong>Azlansyah:</strong></a> +62 877-3973-5264</p>
-        <p><a href=#><strong>Elvan:</strong></a> +62 85640421735</p>
-        <p><a href=#><strong>Reza:</strong></a> +62 815-1761-2911</p>
       </div>
     </div>
 
@@ -165,11 +163,11 @@
     <div class="modal hide fade" id="insertSuccessModal">
       <div class="modal-header">
         <a class="close" data-dismiss="modal">×</a>
-        <h3>Success!</h3>
+        <h3>Najah!</h3>
       </div>
       <div class="modal-body">
-        <p>Thanks for joining the Leaflet Users Map!</p>
-        <p>You should receive an email shortly with instructions on how to edit your information.</p>
+        <p>Syukron sul!</p>
+        <p>Untuk mengedit lokasi menggunakan Token dan Email. Untuk token silahkan minta ke admin</p>
       </div>
     </div>
 
@@ -181,9 +179,9 @@
       <div class="modal-body">
         <form class="well">
           <label>Email</label>
-          <input type="text" class="span3" name="email_remove" id="email_remove">
-          <label>Nim</label>
-          <input type="password" class="span3" name="nim_remove" id="nim_remove"><br>
+          <input type="text" class="span3" placeholder="Pake email pendaftaran" name="email_remove" id="email_remove">
+          <label>Token</label>
+          <input type="password" class="span3" placeholder="Utlub ila admin!" name="token_remove" id="token_remove"><br>
           <button type="button" class="btn btn-primary" onclick="removeUser();">Submit</button>
         </form>
       </div>
@@ -192,11 +190,10 @@
     <div class="modal hide fade" id="removeSuccessModal">
       <div class="modal-header">
         <a class="close" data-dismiss="modal">×</a>
-        <h3>You have been removed</h3>
+        <h3>Data antum sudah terhapus</h3>
       </div>
       <div class="modal-body">
-        <p>You have been removed from the Leaflet User Map.</p>
-        <p>Thanks for your interest and feel free to add youself back at any time.</p>
+        <p>Untuk Menambahkan data lagi klik "tambhakan ke peta"</p>
       </div>
     </div>
 
@@ -290,6 +287,7 @@
             var name = data[i].name;
             var website = data[i].website;
             var tlp = data[i].tlp;
+            var timestamp = data[i].timestamp;
             if (data[i].foto.length > 0) {
               var foto = "<img src="+foto+" alt='Erwin A Latif' width='150px'/>";
             }
@@ -320,10 +318,16 @@
             else {
               var tlp = "";
             }
+            if (data[i].timestamp.length > 0) {
+              var timestamp = "<div style='font-size: 14px;'><i class=icon-time icon-white></i>&nbsp;"+ data[i].timestamp +"</div>";
+            }
+            else {
+              var timestamp = "";
+            }
             var marker = new L.Marker(location, {
               title: name
             });
-            marker.bindPopup("<div style='text-align: left; margin-left: auto; margin-right: auto;'>" + foto + title + nim + city + tlp +"</div>", {maxWidth: '400'});
+            marker.bindPopup("<div style='text-align: left; margin-left: auto; margin-right: auto;'>" + foto + title + nim + city + tlp + timestamp +"</div>", {maxWidth: '400'});
             users.addLayer(marker);
           }
         }).complete(function() {
@@ -380,16 +384,16 @@
 
       function removeUser() {
         var email = $("#email_remove").val();
-        var nim = $("#nim_remove").val();
+        var token = $("#token_remove").val();
         if (email.length == 0) {
-          alert("Email is required!");
+          alert("Email labud sul!");
           return false;
         }
-        if (nim.length == 0) {
-          alert("Nim is required!");
+        if (token.length == 0) {
+          alert("Token labud sul!");
           return false;
         }
-        var dataString = 'email='+ email + '&nim=' + nim;
+        var dataString = 'email='+ email + '&token=' + token;
         $.ajax({
           type: "POST",
           url: "remove_user.php",
@@ -403,7 +407,7 @@
               $('#removeSuccessModal').modal('show');
             }
             else {
-              alert("Incorrect email or nim. Please try again.");
+              alert("Email atau Token salah, coba lagi sul!.");
             }
           }
         });
@@ -416,18 +420,18 @@
         newUser.clearLayers();
         newUser.addLayer(marker);
         var form =  '<form id="inputform" enctype="multipart/form-data" class="well">'+
-              '<label><strong>Roqmu Tasjil:</strong></label>'+
-              '<input type="text" class="span3" placeholder="Required" id="nim" name="nim" />'+
+              '<label><strong>Daftarul Qoid:</strong></label>'+
+              '<input type="text" class="span3" placeholder="Labud jiddan sul!" id="nim" name="nim" />'+
               '<label><strong>Masmukum</strong></label>'+
-              '<input type="text" class="span3" placeholder="Required" id="name" name="name" />'+
+              '<input type="text" class="span3" placeholder="Labud sul!" id="name" name="name" />'+
               '<label><strong>Emailukum:</strong> <i>sirrun</i></label>'+
-              '<input type="text" class="span3" placeholder="Required" id="email" name="email" />'+
+              '<input type="text" class="span3" placeholder="Labud jiddan sul!" id="email" name="email" />'+
               '<label><strong>Dairoh:</strong></label>'+
-              '<input type="text" class="span3" placeholder="Optional" id="city" name="city" />'+
-              '<label><strong>Website:</strong><i>web/fb/ig/dll</i></label>'+
-              '<input type="text" class="span3" placeholder="Optional" id="website" name="website" value="http://" />'+
+              '<input type="text" class="span3" placeholder="Masiktum" id="city" name="city" />'+
+              '<label><strong>Link:</strong><i>web/fb/ig/dll</i></label>'+
+              '<input type="text" class="span3" placeholder="Masiktum" id="website" name="website" value="http://" />'+
               '<label><strong>Nimrotukum:</strong></label>'+
-              '<input type="text" class="span3" placeholder="Required" id="tlp" name="tlp" />'+
+              '<input type="text" class="span3" placeholder="Labud sul!" id="tlp" name="tlp" />'+
               '<input style="display: none;" type="text" id="lat" name="lat" value="'+e.latlng.lat.toFixed(6)+'" />'+
               '<input style="display: none;" type="text" id="lng" name="lng" value="'+e.latlng.lng.toFixed(6)+'" /><br><br>'+
               '<div class="row-fluid">'+
@@ -438,7 +442,6 @@
         marker.bindPopup(form).openPopup();
       }
     </script>
-
   </body>
 </html>
 

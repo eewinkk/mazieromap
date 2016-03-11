@@ -9,4 +9,4 @@ Mapping the members of Maziero in the world. The website will be [Maziero] (http
 - [PHP with PDO_SQLITE enabled](http://php.net/manual/en/ref.pdo-sqlite.php)
 
 ### Demo
-Mazieromap (http://eewinkk.github.io/mazieromap/)
+Mazieromap (http://maziero-681.github.io/mazieromap/)
