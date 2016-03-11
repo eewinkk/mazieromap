@@ -1,9 +1,9 @@
 <?php
 
-$DB_host = "localhost";
-$DB_user = "root";
-$DB_pass = "bismillah";
-$DB_name = "ahmardb";
+$DB_host = "103.9.100.31:2083";
+$DB_user = "maziero6_eewinkk";
+$DB_pass = "wntwNI_HM4Dy";
+$DB_name = "maziero6_ahmardb";
 
 
 try
